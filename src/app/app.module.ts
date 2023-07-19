@@ -7,6 +7,7 @@ import { MSAL_INSTANCE, MsalModule, MsalService } from '@azure/msal-angular';
 import { IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 import { PublicPageComponent } from './public-page/public-page.component';
 import { PrivatePageComponent } from './private-page/private-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
@@ -31,7 +32,8 @@ export function MSALInstanceFactory(): IPublicClientApplication {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MsalModule
+    MsalModule,
+    HttpClientModule
 
   ],
   providers: [

@@ -6,7 +6,7 @@
     <td><button (click)="logout()" *ngIf="isLoggedIn()">LogOut</button></td>
   </tr>
 </table>
-
+<button (click)="getUserProfile()">Get Profile</button>
 <div *ngIf="isLoggedIn()">
   <h3>You are Loged In.</h3>
 </div>
