@@ -12,8 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth:{
-      clientId: '',
-      authority: '',
+      clientId: '551d9948-d485-4115-87b4-102fc7a0108e',
+      authority: 'https://login.microsoftonline.com/e6cedbb8-5e31-4901-bdff-c9574d58620b',
       redirectUri:'http://localhost:4200'
   
     },

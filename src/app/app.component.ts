@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { MsalService } from '@azure/msal-angular';
 import { AuthenticationResult } from '@azure/msal-browser';
 
@@ -14,8 +14,11 @@ export class AppComponent implements OnInit {
   access_token: string | undefined = 'null';
   userProfile: Object | undefined;
 
-  constructor(private msalService: MsalService, private http: HttpClient){
-  }
+  // New Way To Inject Dependencies instead of using the Construtor
+  private msalService = inject(MsalService);
+  private http = inject(HttpClient);
+
+  
   ngOnInit(): void {
     let activeAccount = this.msalService.instance.getActiveAccount();
     this.activeUser = activeAccount?.name;
