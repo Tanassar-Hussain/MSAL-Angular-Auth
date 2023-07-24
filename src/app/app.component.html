@@ -1,6 +1,7 @@
 <table>
   <tr>
     <td><a routerLink="public-page">[PUBLIC-PAGE]</a></td>
+    <img [src]="userProfilePicture" alt="Profile Picture" />
     <td><a routerLink="private-page">[PRIVATE-PAGE]</a></td>
     <td><button (click)="login()" *ngIf="!isLoggedIn()">Sign In</button></td>
     <td><button (click)="logout()" *ngIf="isLoggedIn()">LogOut</button></td>
